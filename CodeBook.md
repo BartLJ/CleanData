@@ -49,15 +49,15 @@ Following transformations are executed in script run_analysis.R to transform the
 * only the measurements on the mean and standard deviation for each measurement are retained in data table df by filtering the columns of this data table which match regular expression "\\.mean\\.|\\.std\\.|activity|subject"
 * the activity id in data table df is replaced with the corresponding activity label, by lookup in data table activities
 * the variables names in data table df are replaced by their descriptive equivalents as follows:
-** the prefix 't' is removed and replaced by a suffix 'intimedomain'
-** the prefix 'f' is removed and replaced by a suffix 'infrequencydomain'
-** a variable name which describes a mean statistic gets a prefix 'meanof'
-** a variable name which describes a standard deviation statistic gets a prefix 'stdof'
-** the substring 'Acc' is replaced by 'linearacceleration'
-** the substring 'Gyro' is replaced by 'angularvelocity'
-** the substring 'Mag' is replaced by 'magnitude'
-** the faulty repetition 'BodyBody' is replaced by 'Body'
-** all dots are moved from the variable names
-** all variable names are converted to lower case
+   * the prefix 't' is removed and replaced by a suffix 'intimedomain'
+   * the prefix 'f' is removed and replaced by a suffix 'infrequencydomain'
+   * a variable name which describes a mean statistic gets a prefix 'meanof'
+   * a variable name which describes a standard deviation statistic gets a prefix 'stdof'
+   * the substring 'Acc' is replaced by 'linearacceleration'
+   * the substring 'Gyro' is replaced by 'angularvelocity'
+   * the substring 'Mag' is replaced by 'magnitude'
+   * the faulty repetition 'BodyBody' is replaced by 'Body'
+   * all dots are moved from the variable names
+   * all variable names are converted to lower case
 
 * the final data table df_summary is created from data table df by grouping on variables activity and subject and calculating the average (mean) of the remaining variables. The feature variable names from data table df are prefixed with 'meanof'
